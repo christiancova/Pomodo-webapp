@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/d6c95a44b0.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+
+    
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Pomodoro</h1>
+
+            <div class="panel">
+                <p id="start">Start</p>
+                <p id="break" >Break</p>
+
+            </div>
+
+            <div class="timer">
+                <div class="circle">
+                    <div class="time">
+                        <p id="minutes"></p>
+                        <p>:</p>
+                        <p id="seconds"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="play" onclick="start()"><i class="fa-solid fa-play"></i></button>
+
+                <a id="reset" href="/"><i class="fa-solid fa-clock-rotate-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script src="./script.js"> </script>
+</body>
+</html>
