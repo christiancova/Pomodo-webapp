@@ -44,9 +44,11 @@
                 <button id="play" onclick="start()"><i class="fa-solid fa-play"></i></button>
 
                 <a id="reset" href="/"><i class="fa-solid fa-clock-rotate-left"></i></a>
+
+                <button id="settings-btn"><i class="fa-solid fa-gear"></i></button>
             </div>
             <!--Settings button-->
-            <button id="settings-btn"><i class="fa-solid fa-gear"></i></button>
+            
 
             <!--Settings modal-->
             <div id="settings-modal" class="modal">
@@ -70,17 +72,25 @@
                             <option value="dark">dark</option>
                             <option value="skyline">Skyline</option>
                             <option value="plain-black">Plain Black</option>
-                            <option value="Aura">Aura</option>
+                            <option value="Aura">aura</option>
                         </select>
                     </div>
 
                     <div id="timer" class="tab-content">
-                        <label>Pomodoro Duration (minutes)</label>
-                        <input type="number" id="work-time" value="25" min="1" max="60">
-                        <label>Short break</label>
-                        <input type="number" id="short-break-time" value="5" min="1" max="9">
-                        <label>Long break</label>
-                        <input type="number" id="long-break-time" value="10" min="1" max="60">
+                        <label>Pomodoro Duration (minutes):</label>
+                        <input type="number" id="pomodoro-time" value="25">
+                    </div>
+
+                    <div id="sound" class="tab-content">
+                        <label>Enable Sound Notifications:</label>
+                        <input type="checkbox" id="enable-sound">
+                    </div>
+
+                    <div id="account" class="tab-content">
+                        <p>Coming soon...</p>
+                    </div>
+
+                    <button id="save-settings">Save Changes</button>
                 </div>
             </div>
 
