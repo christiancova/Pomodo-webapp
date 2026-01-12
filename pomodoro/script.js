@@ -178,39 +178,30 @@ function start() {
         document.getElementById('seconds').innerHTML = seconds;
 
         //start
-        seconds = seconds - 1
+        seconds--;
 
-        if(seconds === 0) {
-            seconds = 59
-            startMinutes = startMinutes - 1;
-            if (startMinutes === -1){
-                if(breakCount % 2 === 0) {
-                    //start break
-                    startMinutes = breakMinutes;
-                    breakCount++
-
-                    //change the panel
-                    startTitle.classList.remove('active');
-                    breakTitle.classList.add('active');
-                }else{
-                    startMinutes = startTime;
-                    breakCount++
-
-                    breakTitle.classList.remove('active');
-                    startTitle.classList.add('active');
-                }
-
+        if (seconds < 0) {
+            seconds = 59;
+            startMinutes--;
+      
+            if (startMinutes < 0) {
+              if (breakCount % 2 === 0) {
+                startMinutes = breakMinutes;
+                breakCount++;
+                startTitle.classList.remove('active');
+                breakTitle.classList.add('active');
+              } else {
+                startMinutes = startTime - 1; // keep consistent with your display logic
+                breakCount++;
+                breakTitle.classList.remove('active');
+                startTitle.classList.add('active');
+              }
             }
-        }
-
-    }
-
-    
-
-    setInterval(timerFunction, 1000); //1000 = 1s
-
-
-}
+          }
+        };
+      
+        intervalId = setInterval(timerFunction, 1000); // <-- KEY FIX
+      }
 
 document.getElementById('reset').addEventListener('click', function () {
     clearInterval(intervalId);
